@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fuel Well — Dietary Guidelines for Americans 2025–2030</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="shell">
+    <p class="course-nav"><a href="index.html">← Back to course</a></p>
+    <header class="hero">
+      <div class="icon">🍎</div>
+      <div>
+        <div class="eyebrow">MODULE 1 <span class="pill">START HERE</span></div>
+        <h1>Eat Real Food: Building Nutrient-Dense Eating Patterns</h1>
+        <p class="lede">Complete a pre-assessment, practice sorting everyday foods, and finish with a knowledge check. Key takeaways from the Dietary Guidelines for Americans, 2025–2030 appear as a refresher after you finish all three steps.</p>
+        <p class="source">Based on the Dietary Guidelines for Americans, 2025–2030 (realfood.gov).</p>
+      </div>
+    </header>
+
+    <section class="module-card">
+      <div class="step" data-step="1">
+        <div class="step-num">1</div>
+        <div class="step-copy">
+          <div class="step-label">STEP 1 <span>PRE-MODULE ASSESSMENT</span></div>
+          <h2>Quick Check: Real Food Basics</h2>
+          <p>See what you already know before any teaching content is shown.</p>
+        </div>
+        <button type="button" data-go="assessment">Start</button>
+      </div>
+
+      <div class="step locked" data-step="2">
+        <div class="step-num">2</div>
+        <div class="step-copy">
+          <div class="step-label">STEP 2 <span>INTERACTIVE MODULE</span></div>
+          <h2>Sort the Foods</h2>
+          <p>Drag each food one at a time into the category you think fits best.</p>
+          <p class="lock-note">Complete Step 1 to continue.</p>
+        </div>
+        <button type="button" data-go="sort" disabled>Open</button>
+      </div>
+
+      <div class="step locked" data-step="3">
+        <div class="step-num">3</div>
+        <div class="step-copy">
+          <div class="step-label">STEP 3 <span>KNOWLEDGE CHECK</span></div>
+          <h2>Knowledge Check: Everyday Nutrition</h2>
+          <p>Apply what you practiced to everyday nutrition choices.</p>
+          <p class="lock-note">Complete Step 2 to continue.</p>
+        </div>
+        <button type="button" data-go="quiz" disabled>Open</button>
+      </div>
+    </section>
+
+    <section id="assessment" class="panel hidden">
+      <div class="panel-head">
+        <span class="tag">STEP 1</span>
+        <h2>Quick Check</h2>
+        <p>This is a pre-assessment. Choose the best answer for each question.</p>
+      </div>
+      <div id="assessment-questions"></div>
+      <button class="primary" type="button" id="assessment-submit">Check answers</button>
+      <div id="assessment-result" class="result"></div>
+    </section>
+
+    <section id="sort" class="panel hidden">
+      <div class="panel-head">
+        <span class="tag">STEP 2</span>
+        <h2>Sort the Foods</h2>
+        <p>Drag the food card into one drop zone. You will sort every food one at a time.</p>
+      </div>
+
+      <div class="dnd-progress" id="sort-progress"></div>
+
+      <div class="dnd-stage" id="dnd-stage">
+        <div class="dnd-item-wrap">
+          <p class="dnd-hint">Drag this food into a category below</p>
+          <div id="drag-food" class="drag-food" draggable="true"></div>
+        </div>
+
+        <div class="drop-zones" id="drop-zones">
+          <div class="drop-zone" data-category="whole">
+            <strong>Nutrient-dense / whole food</strong>
+            <span>Close to its original form</span>
+            <div class="zone-items" data-zone-items="whole" aria-live="polite"></div>
+          </div>
+          <div class="drop-zone" data-category="processed">
+            <strong>Processed (moderate)</strong>
+            <span>Preserved or prepared, but not ultra-formulated</span>
+            <div class="zone-items" data-zone-items="processed" aria-live="polite"></div>
+          </div>
+          <div class="drop-zone" data-category="ultra">
+            <strong>Highly processed</strong>
+            <span>Packaged, ready-to-eat, often high in additives</span>
+            <div class="zone-items" data-zone-items="ultra" aria-live="polite"></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="sort-feedback" class="feedback"></div>
+      <div id="sort-result" class="result"></div>
+    </section>
+
+    <section id="quiz" class="panel hidden">
+      <div class="panel-head">
+        <span class="tag">STEP 3</span>
+        <h2>Knowledge Check</h2>
+        <p>Apply the 2025–2030 Guidelines to everyday choices.</p>
+      </div>
+      <div id="quiz-questions"></div>
+      <button class="primary" type="button" id="quiz-submit">Submit knowledge check</button>
+      <div id="quiz-result" class="result"></div>
+    </section>
+
+    <section id="refresher" class="guidelines-card hidden">
+      <div class="refresher-badge">REFRESHER</div>
+      <h2>What the 2025–2030 Guidelines Emphasize</h2>
+      <p class="refresher-intro">Nice work finishing the module. Here’s a quick review of the key ideas.</p>
+      <div class="pillar-grid">
+        <div class="pillar"><span>🥩</span><strong>Protein</strong><p>Prioritize at every meal from animal and plant sources.</p></div>
+        <div class="pillar"><span>🥛</span><strong>Dairy</strong><p>Full-fat dairy with no added sugars when you consume it.</p></div>
+        <div class="pillar"><span>🥦</span><strong>Vegetables</strong><p>Colorful, whole vegetables throughout the day.</p></div>
+        <div class="pillar"><span>🍊</span><strong>Fruits</strong><p>Whole fruits in their original form when possible.</p></div>
+        <div class="pillar"><span>🫒</span><strong>Healthy Fats</strong><p>From whole foods and cooking oils like olive oil.</p></div>
+        <div class="pillar"><span>🌾</span><strong>Whole Grains</strong><p>Fiber-rich grains; limit refined carbohydrates.</p></div>
+      </div>
+      <ul class="guideline-list">
+        <li>Choose water and unsweetened beverages for hydration.</li>
+        <li>Limit highly processed packaged foods with added sugars, sodium, and chemical additives.</li>
+        <li>Keep added sugars to no more than <strong>10 grams per meal</strong>.</li>
+        <li>Keep sodium under <strong>2,300 mg per day</strong> (ages 14+).</li>
+        <li>Support gut health with vegetables, fruits, fermented foods, and high-fiber foods.</li>
+      </ul>
+    </section>
+
+    <footer>
+      <strong>Fuel Well</strong> · Educational demo · Not individualized medical or nutrition advice.
+      <div>Source: Dietary Guidelines for Americans, 2025–2030 · realfood.gov</div>
+    </footer>
+  </main>
+  <script src="module-1.js"></script>
+</body>
+</html>

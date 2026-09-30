@@ -3,106 +3,61 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fuel Well — Nutrition for American Eating Patterns</title>
+  <title>Fuel Well — American Nutrition Course</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <main class="shell">
-    <header class="hero">
-      <div class="icon">🍎</div>
+    <header class="hero course-hero">
+      <div class="icon">🥗</div>
       <div>
-        <div class="eyebrow">MODULE 1 <span class="pill">START HERE</span></div>
-        <h1>Building Balanced American Eating Patterns</h1>
-        <p class="lede">Learn to recognize highly processed foods, understand added sugar, saturated fat, and sodium, and practice realistic food swaps without labeling foods as “good” or “bad.”</p>
-        <p class="source">Based on USDA MyPlate and the Dietary Guidelines for Americans.</p>
+        <div class="eyebrow">FUEL WELL <span class="pill">AMERICAN NUTRITION</span></div>
+        <h1>Nutrition Course for American Eating Patterns</h1>
+        <p class="lede">Two interactive modules based on the Dietary Guidelines for Americans, 2025–2030 and USDA MyPlate. Start with real-food basics, then learn to build a balanced American plate.</p>
+        <p class="source">Sources: Dietary Guidelines for Americans, 2025–2030 · USDA MyPlate</p>
       </div>
     </header>
 
-    <section class="module-card">
-      <div class="step complete">
-        <div class="step-num">✓</div>
-        <div class="step-copy">
-          <div class="step-label">STEP 1 <span>PRE-MODULE ASSESSMENT</span></div>
-          <h2>Quick Check: Packaged & Everyday Foods</h2>
-          <p>See what you already know before starting.</p>
-        </div>
-        <button data-go="assessment">Start</button>
-      </div>
-
-      <div class="step">
-        <div class="step-num">2</div>
-        <div class="step-copy">
-          <div class="step-label">STEP 2 <span>INTERACTIVE MODULE</span></div>
-          <h2>Sort the Foods</h2>
-          <p>Explore whole, processed, and highly processed examples.</p>
-        </div>
-        <button data-go="sort">Open</button>
-      </div>
-
-      <div class="step">
-        <div class="step-num">3</div>
-        <div class="step-copy">
-          <div class="step-label">STEP 3 <span>KNOWLEDGE CHECK</span></div>
-          <h2>Knowledge Check: Everyday Nutrition</h2>
-          <p>Use what you learned to make practical choices.</p>
-        </div>
-        <button data-go="quiz">Open</button>
-      </div>
-    </section>
-
-    <section id="assessment" class="panel hidden">
-      <div class="panel-head">
-        <span class="tag">STEP 1</span>
-        <h2>Quick Check</h2>
-        <p>Choose the answer that seems most accurate. You can retake it anytime.</p>
-      </div>
-      <div id="assessment-questions"></div>
-      <button class="primary" id="assessment-submit">Check answers</button>
-      <div id="assessment-result" class="result"></div>
-    </section>
-
-    <section id="sort" class="panel hidden">
-      <div class="panel-head">
-        <span class="tag">STEP 2</span>
-        <h2>Sort the Foods</h2>
-        <p>Tap a category, then choose the food that best fits. Processing exists on a spectrum, so context matters.</p>
-      </div>
-      <div class="sort-layout">
-        <div>
-          <div class="sort-progress" id="sort-progress"></div>
-          <div id="food-card" class="food-card"></div>
-          <div class="choices">
-            <button data-category="whole">Whole / minimally processed</button>
-            <button data-category="processed">Processed</button>
-            <button data-category="ultra">Highly / ultra-processed</button>
+    <section class="course-grid">
+      <a class="course-module" href="module-1.html">
+        <div class="course-module-top">
+          <span class="course-module-icon">🍎</span>
+          <div>
+            <div class="eyebrow">MODULE 1</div>
+            <h2>Eat Real Food: Building Nutrient-Dense Eating Patterns</h2>
           </div>
-          <div id="sort-feedback" class="feedback"></div>
         </div>
-        <aside class="info-card">
-          <h3>Remember</h3>
-          <p><strong>Whole or minimally processed:</strong> close to its original form.</p>
-          <p><strong>Processed:</strong> altered to preserve, prepare, or enhance food.</p>
-          <p><strong>Highly / ultra-processed:</strong> typically formulated with multiple industrial ingredients and additives. Not every packaged food fits neatly into one box.</p>
-        </aside>
-      </div>
-    </section>
+        <p>Pre-assess what you know, sort everyday foods by processing level, and finish with a knowledge check. Guidelines refresher unlocks after you complete all steps.</p>
+        <ul class="course-module-steps">
+          <li>Step 1 — Pre-module assessment</li>
+          <li>Step 2 — Sort the Foods (drag & drop)</li>
+          <li>Step 3 — Knowledge check + refresher</li>
+        </ul>
+        <span class="course-cta">Open Module 1 →</span>
+      </a>
 
-    <section id="quiz" class="panel hidden">
-      <div class="panel-head">
-        <span class="tag">STEP 3</span>
-        <h2>Knowledge Check</h2>
-        <p>Let's see what you learned.</p>
-      </div>
-      <div id="quiz-questions"></div>
-      <button class="primary" id="quiz-submit">Submit knowledge check</button>
-      <div id="quiz-result" class="result"></div>
+      <a class="course-module featured" href="module-2.html">
+        <div class="course-module-top">
+          <span class="course-module-icon">🍽️</span>
+          <div>
+            <div class="eyebrow">MODULE 2 <span class="pill">NEW</span></div>
+            <h2>Building Balanced Meals with the American Plate</h2>
+          </div>
+        </div>
+        <p>Explore how USDA MyPlate builds nutritionally balanced meals, and practice creating your own balanced American plate with everyday foods.</p>
+        <ul class="course-module-steps">
+          <li>Step 1 — Pre-module assessment</li>
+          <li>Step 2 — Build Your Plate (drag & drop)</li>
+          <li>Step 3 — Knowledge check + refresher</li>
+        </ul>
+        <span class="course-cta">Open Module 2 →</span>
+      </a>
     </section>
 
     <footer>
       <strong>Fuel Well</strong> · Educational demo · Not individualized medical or nutrition advice.
-      <div>Sources: USDA MyPlate · Dietary Guidelines for Americans</div>
+      <div>Sources: Dietary Guidelines for Americans, 2025–2030 · USDA MyPlate · myplate.gov</div>
     </footer>
   </main>
-  <script src="app.js"></script>
 </body>
 </html>

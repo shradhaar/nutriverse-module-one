@@ -1,0 +1,13 @@
+{
+  "name": "fuel-well-module-one",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Fuel Well interactive nutrition module aligned with Dietary Guidelines for Americans 2025–2030",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

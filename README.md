@@ -1,54 +1,34 @@
-# Fuel Well — Nutrition for American Eating Patterns
+# Fuel Well — American Nutrition Course
 
-A lightweight, student-friendly interactive nutrition education module inspired by the three-part flow shown in the reference design:
+Interactive student nutrition course based on the **Dietary Guidelines for Americans, 2025–2030** and **USDA MyPlate**.
 
-1. **Pre-module assessment** — Quick Check: Packaged & Everyday Foods
-2. **Interactive module** — Sort the Foods
-3. **Knowledge check** — Everyday Nutrition
+## Modules
 
-## Why this version is different
+1. **Module 1 — Eat Real Food** (`module-1.html`)
+   - Pre-assessment
+   - Sort foods by processing level (drag & drop; foods stay in their category)
+   - Knowledge check + guidelines refresher
 
-Instead of centering the module on a single country's dietary framework, this version uses U.S. nutrition concepts such as:
+2. **Module 2 — Building Balanced Meals with the American Plate** (`module-2.html`)
+   - Pre-assessment on MyPlate food groups
+   - Build Your Plate (drag American foods from a food library onto a plate; continue after checking your score)
+   - Knowledge check + MyPlate refresher
 
-- USDA MyPlate food groups
-- Added sugars, saturated fat, and sodium
-- Nutrition Facts and ingredient lists
-- Whole/minimally processed, processed, and highly/ultra-processed foods
-- Practical, realistic food choices without “good food/bad food” language
-
-The module is educational and does not prescribe calorie targets or individualized diets.
+Course home: `index.html`
 
 ## Run locally
 
-No build tools are required.
-
 ```bash
-git clone <your-repository-url>
-cd american-nutrition-module
-open index.html
+npm start
 ```
 
-You can also use any simple local web server.
+Opens `http://127.0.0.1:4321/index.html` in your browser.
 
-## Files
-
-- `index.html` — page structure and module content
-- `styles.css` — responsive styling
-- `app.js` — assessment, sorting activity, and knowledge-check logic
+```bash
+NO_OPEN=1 npm start
+```
 
 ## Sources
 
-Content is informed by USDA MyPlate and the Dietary Guidelines for Americans.
-
-- https://www.myplate.gov/
-- https://www.dietaryguidelines.gov/
-
-For production use, review the current federal guidance and have the educational content reviewed by a qualified nutrition professional.
-
-## Suggested next modules
-
-- **Module 2:** Reading a Nutrition Facts label
-- **Module 3:** Added sugars and sugary drinks
-- **Module 4:** Sodium in common American foods
-- **Module 5:** Building a balanced meal on a budget
-- **Module 6:** Eating well at school, work, restaurants, and on the go
+- Dietary Guidelines for Americans, 2025–2030
+- USDA MyPlate (myplate.gov)

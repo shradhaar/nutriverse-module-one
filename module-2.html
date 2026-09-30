@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Module 2 — Building Balanced Meals with the American Plate</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="shell">
+    <p class="course-nav"><a href="index.html">← Back to course</a></p>
+
+    <header class="hero">
+      <div class="icon">🍽️</div>
+      <div>
+        <div class="eyebrow">MODULE 2 <span class="pill">AMERICAN PLATE</span></div>
+        <h1>Building Balanced Meals with the American Plate</h1>
+        <p class="lede">Explore how USDA MyPlate builds nutritionally balanced meals, and learn to create your own balanced plate using everyday American foods.</p>
+        <p class="source">Source: USDA MyPlate &amp; Dietary Guidelines for Americans, 2025–2030</p>
+      </div>
+    </header>
+
+    <section class="module-card">
+      <div class="step" data-step="1">
+        <div class="step-num">1</div>
+        <div class="step-copy">
+          <div class="step-label">STEP 1 <span>PRE-MODULE ASSESSMENT</span></div>
+          <h2>Quick Check: Balanced Meals &amp; Food Groups</h2>
+          <p>This helps measure your knowledge before the module.</p>
+        </div>
+        <button type="button" data-go="assessment">Start</button>
+      </div>
+
+      <div class="step locked" data-step="2">
+        <div class="step-num">2</div>
+        <div class="step-copy">
+          <div class="step-label">STEP 2 <span>INTERACTIVE MODULE</span></div>
+          <h2>Build Your Plate</h2>
+          <p>Drag American foods onto your plate and build a balanced MyPlate meal.</p>
+          <p class="lock-note">Complete Step 1 to continue.</p>
+        </div>
+        <button type="button" data-go="plate" disabled>Open</button>
+      </div>
+
+      <div class="step locked" data-step="3">
+        <div class="step-num">3</div>
+        <div class="step-copy">
+          <div class="step-label">STEP 3 <span>KNOWLEDGE CHECK</span></div>
+          <h2>Knowledge Check: Building a Balanced Plate</h2>
+          <p>Let’s see what you learned about balanced American meals.</p>
+          <p class="lock-note">Complete Step 2 to continue.</p>
+        </div>
+        <button type="button" data-go="quiz" disabled>Open</button>
+      </div>
+    </section>
+
+    <section id="assessment" class="panel hidden">
+      <div class="panel-head">
+        <span class="tag">STEP 1</span>
+        <h2>Quick Check: Balanced Meals &amp; Food Groups</h2>
+        <p>Pre-assessment — choose the best answer for each question.</p>
+      </div>
+      <div id="assessment-questions"></div>
+      <button class="primary" type="button" id="assessment-submit">Check answers</button>
+      <div id="assessment-result" class="result"></div>
+    </section>
+
+    <section id="plate" class="panel hidden">
+      <div class="panel-head">
+        <span class="tag">STEP 2</span>
+        <h2>Build Your Plate</h2>
+        <p>Drag or click everyday American foods—school hot lunch and home dinner staples—onto your plate, then check your balance score.</p>
+      </div>
+
+      <div class="builder-help">
+        <div class="help-card">
+          <h3>How to play</h3>
+          <ol>
+            <li>Drag or click food items onto your plate</li>
+            <li>Build a balanced meal</li>
+            <li>Add at least 2 items, then check your score</li>
+          </ol>
+        </div>
+        <div class="help-card">
+          <h3>How balance is evaluated</h3>
+          <ul>
+            <li>Variety across MyPlate food groups</li>
+            <li>Protein + grains + vegetable or fruit</li>
+            <li>Reasonable portion count (aim for 4–6 servings)</li>
+          </ul>
+        </div>
+        <div class="help-goal">
+          <span>🏆 Build a balanced plate</span>
+          <span style="font-weight:600;opacity:.9">Include protein, grains, and vegetable/fruit.</span>
+        </div>
+      </div>
+
+      <div class="builder-layout">
+        <div class="builder-panel builder-plate-col">
+          <h3>Your American Plate</h3>
+          <div class="plate-stage">
+            <div id="plate-drop" class="plate-drop" aria-label="Plate drop zone">
+              <div class="plate-rim"></div>
+              <div id="plate-empty" class="plate-empty">
+                <span>Drag food items here to build your plate</span>
+              </div>
+              <div id="plate-servings" class="plate-servings"></div>
+            </div>
+          </div>
+          <p class="plate-count" id="plate-count">0 servings added · Aim for 4–6 servings</p>
+          <div class="plate-actions">
+            <button class="primary check-btn" type="button" id="check-plate" disabled>✨ Check My Plate</button>
+            <button class="secondary" type="button" id="reset-plate">↻ Reset Plate</button>
+          </div>
+        </div>
+
+        <div class="builder-panel builder-foods-col">
+          <h3>American Foods</h3>
+          <div id="food-library" class="food-library"></div>
+        </div>
+      </div>
+    </section>
+
+    <div id="score-modal" class="score-modal hidden" role="dialog" aria-modal="true" aria-labelledby="score-modal-title">
+      <div class="score-modal-backdrop" data-close-score></div>
+      <div class="score-modal-card">
+        <button type="button" class="score-close" data-close-score aria-label="Close">×</button>
+        <h2 id="score-modal-title">Your Plate Score</h2>
+        <p class="score-subtitle">See how balanced your meal is!</p>
+        <div class="score-hero-number" id="score-number">0</div>
+        <p class="score-status" id="score-status"></p>
+        <div class="score-divider"></div>
+
+        <div class="score-section">
+          <div class="score-section-label">Nutrition Summary</div>
+          <div class="nutrition-grid">
+            <div class="nutrition-card wide"><strong id="nut-cal">0</strong><span>Calories</span></div>
+            <div class="nutrition-card wide"><strong id="nut-fiber">0g</strong><span>Fiber</span></div>
+            <div class="nutrition-card"><strong id="nut-carbs" class="accent-carb">0g</strong><span>Carbs</span></div>
+            <div class="nutrition-card"><strong id="nut-protein">0g</strong><span>Protein</span></div>
+            <div class="nutrition-card"><strong id="nut-fat">0g</strong><span>Fat</span></div>
+          </div>
+        </div>
+
+        <div class="score-section">
+          <div class="score-section-label">Macro Balance</div>
+          <div class="macro-bars" id="macro-bars"></div>
+        </div>
+
+        <div class="score-tips" id="score-tips"></div>
+
+        <div class="score-actions">
+          <button type="button" class="secondary" data-close-score>Close</button>
+          <button type="button" class="primary" id="score-try-again">Try Again</button>
+        </div>
+      </div>
+    </div>
+
+    <section id="quiz" class="panel hidden">
+      <div class="panel-head">
+        <span class="tag">STEP 3</span>
+        <h2>Knowledge Check: Building a Balanced Plate</h2>
+        <p>Apply MyPlate and the 2025–2030 Guidelines to everyday American meals.</p>
+      </div>
+      <div id="quiz-questions"></div>
+      <button class="primary" type="button" id="quiz-submit">Submit knowledge check</button>
+      <div id="quiz-result" class="result"></div>
+    </section>
+
+    <section id="refresher" class="guidelines-card hidden">
+      <div class="refresher-badge">REFRESHER</div>
+      <h2>Building a Balanced American Plate</h2>
+      <p class="refresher-intro">Nice work finishing Module 2. Here’s a quick review of MyPlate.</p>
+      <div class="pillar-grid plate-refresher">
+        <div class="pillar"><span>🥦</span><strong>Vegetables</strong><p>Fill about half your plate with colorful vegetables.</p></div>
+        <div class="pillar"><span>🍎</span><strong>Fruits</strong><p>Add whole fruit as part of half your plate.</p></div>
+        <div class="pillar"><span>🌾</span><strong>Grains</strong><p>Choose whole grains like brown rice, oats, or whole-wheat bread.</p></div>
+        <div class="pillar"><span>🍗</span><strong>Protein</strong><p>Vary protein: poultry, seafood, eggs, beans, nuts, and lean meats.</p></div>
+        <div class="pillar"><span>🥛</span><strong>Dairy</strong><p>Include dairy or fortified soy alternatives with meals or snacks.</p></div>
+        <div class="pillar"><span>💧</span><strong>Drinks</strong><p>Choose water and unsweetened beverages most often.</p></div>
+      </div>
+      <ul class="guideline-list">
+        <li>Use USDA MyPlate as a visual guide: vegetables + fruit ≈ half the plate.</li>
+        <li>Make at least half your grains whole grains.</li>
+        <li>Vary your protein foods across the week.</li>
+        <li>Limit highly processed foods, added sugars, and excess sodium.</li>
+        <li>Build realistic American meals — school lunch, home cooking, and restaurant choices can all follow MyPlate.</li>
+      </ul>
+    </section>
+
+    <footer>
+      <strong>Fuel Well · Module 2</strong> · Educational demo · Not individualized medical or nutrition advice.
+      <div>Source: USDA MyPlate · Dietary Guidelines for Americans, 2025–2030 · myplate.gov</div>
+    </footer>
+  </main>
+  <script src="module-2.js"></script>
+</body>
+</html>
