@@ -101,7 +101,8 @@ const foodLibrary = [
       { id: "corn", name: "Corn", emoji: "🌽", serving: "1/2 cup", cal: 80, carbs: 18, protein: 3, fat: 1, fiber: 2, group: "vegetables", veg: true },
       { id: "green-beans", name: "Green Beans", emoji: "🥒", serving: "1/2 cup", cal: 25, carbs: 5, protein: 1, fat: 0, fiber: 2, group: "vegetables", veg: true },
       { id: "peas", name: "Peas", emoji: "🟢", serving: "1/2 cup", cal: 60, carbs: 11, protein: 4, fat: 0.5, fiber: 4, group: "vegetables", veg: true },
-      { id: "side-salad", name: "Side Salad", emoji: "🥗", serving: "1 cup", cal: 35, carbs: 6, protein: 2, fat: 0.5, fiber: 2, group: "vegetables", veg: true },
+      { id: "avocado-ranch-salad", name: "Avocado Ranch Chopped Salad", emoji: "🥑", image: "images/avocado-ranch-chopped-salad.jpg", serving: "1 cup", cal: 150, carbs: 9, protein: 3, fat: 12, fiber: 4, group: "vegetables", veg: true },
+      { id: "mediterranean-salad", name: "Organic Mediterranean Chopped Salad", emoji: "🥗", image: "images/organic-mediterranean-chopped-salad.jpg", serving: "1 cup", cal: 150, carbs: 10, protein: 3, fat: 11, fiber: 3, group: "vegetables", veg: true },
       { id: "broccoli", name: "Steamed Broccoli", emoji: "🥦", serving: "1/2 cup", cal: 30, carbs: 6, protein: 2.5, fat: 0.5, fiber: 3, group: "vegetables", veg: true },
       { id: "carrot-sticks", name: "Carrot Sticks", emoji: "🥕", serving: "1 cup", cal: 50, carbs: 12, protein: 1, fat: 0.5, fiber: 3.5, group: "vegetables", veg: true },
       { id: "coleslaw", name: "Coleslaw", emoji: "🥬", serving: "1/2 cup", cal: 90, carbs: 8, protein: 1, fat: 6, fiber: 2, group: "vegetables", veg: true }
@@ -299,11 +300,18 @@ function foodById(id) {
   return allFoods.find((f) => f.id === id);
 }
 
+function foodMediaHtml(food, emojiClass) {
+  if (food.image) {
+    return `<img class="food-photo" src="${food.image}" alt="${food.name}" draggable="false" />`;
+  }
+  return `<span class="${emojiClass}">${food.emoji}</span>`;
+}
+
 function foodCardHtml(food) {
   return `
     <div class="food-card" draggable="true" data-id="${food.id}" title="Drag or click to add to your plate">
-      <div class="food-card-media">
-        <span class="food-emoji">${food.emoji}</span>
+      <div class="food-card-media${food.image ? " has-photo" : ""}">
+        ${foodMediaHtml(food, "food-emoji")}
         <span class="diet-badge ${food.veg ? "veg" : "nonveg"}" title="${food.veg ? "Vegetarian" : "Non-vegetarian"}"></span>
       </div>
       <strong>${food.name}</strong>
@@ -397,8 +405,8 @@ function updatePlateUI() {
     servings.innerHTML = state.plateItems
       .map((id, index) => {
         const food = foodById(id);
-        return `<div class="plate-bowl" data-index="${index}" title="${food.name}">
-          <span class="bowl-emoji">${food.emoji}</span>
+        return `<div class="plate-bowl${food.image ? " has-photo" : ""}" data-index="${index}" title="${food.name}">
+          ${foodMediaHtml(food, "bowl-emoji")}
           <span class="bowl-name">${food.name}</span>
           <button type="button" class="chip-remove" aria-label="Remove ${food.name}">×</button>
         </div>`;
