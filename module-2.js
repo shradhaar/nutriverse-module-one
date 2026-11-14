@@ -101,7 +101,8 @@ const foodLibrary = [
       { id: "corn", name: "Corn", emoji: "🌽", serving: "1/2 cup", cal: 80, carbs: 18, protein: 3, fat: 1, fiber: 2, group: "vegetables", veg: true },
       { id: "green-beans", name: "Green Beans", emoji: "🥒", serving: "1/2 cup", cal: 25, carbs: 5, protein: 1, fat: 0, fiber: 2, group: "vegetables", veg: true },
       { id: "peas", name: "Peas", emoji: "🟢", serving: "1/2 cup", cal: 60, carbs: 11, protein: 4, fat: 0.5, fiber: 4, group: "vegetables", veg: true },
-      { id: "side-salad", name: "Side Salad", emoji: "🥗", serving: "1 cup", cal: 35, carbs: 6, protein: 2, fat: 0.5, fiber: 2, group: "vegetables", veg: true },
+      { id: "avocado-ranch-salad", name: "Avocado Ranch Chopped Salad", emoji: "🥑", serving: "1 cup", cal: 150, carbs: 9, protein: 3, fat: 12, fiber: 4, group: "vegetables", veg: true },
+      { id: "mediterranean-salad", name: "Organic Mediterranean Chopped Salad", emoji: "🥗", serving: "1 cup", cal: 150, carbs: 10, protein: 3, fat: 11, fiber: 3, group: "vegetables", veg: true },
       { id: "broccoli", name: "Steamed Broccoli", emoji: "🥦", serving: "1/2 cup", cal: 30, carbs: 6, protein: 2.5, fat: 0.5, fiber: 3, group: "vegetables", veg: true },
       { id: "carrot-sticks", name: "Carrot Sticks", emoji: "🥕", serving: "1 cup", cal: 50, carbs: 12, protein: 1, fat: 0.5, fiber: 3.5, group: "vegetables", veg: true },
       { id: "coleslaw", name: "Coleslaw", emoji: "🥬", serving: "1/2 cup", cal: 90, carbs: 8, protein: 1, fat: 6, fiber: 2, group: "vegetables", veg: true }
