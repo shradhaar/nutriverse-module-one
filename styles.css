@@ -339,6 +339,29 @@ footer { color: #74837f; text-align: center; padding: 28px 10px 40px; font-size:
   position: relative;
 }
 .bowl-emoji { font-size: 22px; line-height: 1; }
+.plate-bowl.has-photo {
+  overflow: hidden;
+  padding: 0;
+  background: #fff;
+}
+.plate-bowl.has-photo .food-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.plate-bowl.has-photo .bowl-name {
+  position: relative;
+  z-index: 1;
+  margin-top: auto;
+  max-width: 100%;
+  padding: 2px 4px 6px;
+  background: linear-gradient(transparent, rgba(255,255,255,.92) 35%);
+  border-radius: 0 0 36px 36px;
+}
 .bowl-name {
   font-size: 9px;
   font-weight: 700;
@@ -448,6 +471,18 @@ button:disabled { opacity: .45; cursor: not-allowed; }
   overflow: hidden;
 }
 .food-card-media .food-emoji { font-size: 44px; line-height: 1; }
+.food-card-media.has-photo {
+  background: #fff;
+  border: 1px solid #ecefe8;
+}
+.food-card-media .food-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+}
 .diet-badge {
   position: absolute; top: 8px; right: 8px;
   width: 16px; height: 16px; border-radius: 3px;
